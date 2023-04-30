@@ -4,7 +4,7 @@
   on: 
     push: 
         branches: 
-            - main
+            - master
 
    jobs: 
         build:
@@ -13,13 +13,13 @@
                 - name: Check out code 
                 - users: actions/checkout@v2
 
-                - name: Setup .NET environment
-                - users: actions/setup-dotnet@v3
-                with: 
-                    dotnet-version: '3.1.x'
+                # - name: Setup .NET environment
+                # - users: actions/setup-dotnet@v3
+                # with: 
+                #     dotnet-version: '3.1.x'
                 
-                - name: Restore dependencies
-                run: dotnet restore
+                # - name: Restore dependencies
+                # run: dotnet restore
                 
-                - name: Build App
-                run: dotnet build -c Release 
+                # - name: Build App
+                # run: dotnet build -c Release 
