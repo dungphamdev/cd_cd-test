@@ -1,11 +1,8 @@
-
   name: Continuous Integration and Deployment
-
   on: 
     push: 
         branches: 
             - master
-
    jobs: 
         build:
             runs-on: ubuntu-lastest
