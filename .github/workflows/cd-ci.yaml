@@ -9,8 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-lastest
     steps:
-      - name: Setup .NET environment
-      uses: actions/checkout@v2
+        - name: Check out code
+          uses: actions/checkout@v2
+        
+    
 
       # - name: Setup .NET environment
       # - users: actions/setup-dotnet@v3
