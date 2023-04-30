@@ -1,9 +1,11 @@
-  name: Continuous Integration and Deployment
-  on: 
-    push: 
-        branches: 
-            - 'master'
-   jobs: 
+# The name of the work flow. Badges will use this name
+name: Continuous Integration and Deployment
+
+on:
+    push:
+      branches: [ main ]
+            
+jobs: 
         build:
             runs-on: ubuntu-lastest
             steps:
