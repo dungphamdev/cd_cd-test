@@ -39,8 +39,15 @@ namespace ci_cd_1.Controllers
             // .ToArray();
 
             var test = _configuration.GetSection("MyKey").Value;
+            var ASPNETCORE_ENVIRONMENT = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            var DOTNET_ENVIRONMENT = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
+            return @$"
 
-            return $"{test}";
+            ASPNETCORE_ENVIRONMENT: {ASPNETCORE_ENVIRONMENT}
+            DOTNET_ENVIRONMENT: {DOTNET_ENVIRONMENT}
+
+            Reading config: {test} 
+            ";
         }
     }
 }

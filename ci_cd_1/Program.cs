@@ -14,8 +14,10 @@ namespace ci_cd_1
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureHostConfiguration(configHost => configHost.AddEnvironmentVariables())
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
+                    //config.AddEnvironmentVariables();
                     //config.AddJsonFile($"appsettings.json", false, true);
                     //config.AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json");
 
@@ -24,6 +26,7 @@ namespace ci_cd_1
                     //       appConfig.AddJsonFile($"appsettings.json", false, true);
                     //       appConfig.AddJsonFile($"appsettings{Environment.GetEnvironmentVariable(
                     //"ASPNETCORE_ENVIRONMENT")}.json", false, true);
+
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
