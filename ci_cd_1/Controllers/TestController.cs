@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,12 @@ namespace ci_cd_1.Controllers
         };
 
         private readonly ILogger<TestController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public TestController(ILogger<TestController> logger)
+        public TestController(ILogger<TestController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         [HttpGet]
@@ -34,7 +37,10 @@ namespace ci_cd_1.Controllers
             //     Summary = Summaries[rng.Next(Summaries.Length)]
             // })
             // .ToArray();
-            return "Hello world!!";
+
+            var test = _configuration.GetSection("MyKey").Value;
+
+            return $"{test}";
         }
     }
 }

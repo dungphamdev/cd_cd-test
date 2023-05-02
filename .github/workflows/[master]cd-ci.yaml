@@ -1,5 +1,5 @@
 # The name of the work flow. Badges will use this name
-name: Continuous Integration and Deployment
+name: Master - Continuous Integration and Deployment
 
 on:
   push:
